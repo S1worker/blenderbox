@@ -1,0 +1,88 @@
+.newssingle{
+
+  &__location{
+    @include _flexbox();
+    border-top: 1px solid #E0E0E0;
+    padding-top: 35px;
+    margin: 0 0 30px 0;
+
+    @include media( sm ) {
+      @include _flex-flow(column nowrap);
+    }
+
+    &-link {
+      padding: 37px 0 0 0;
+
+      a {
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 16px;
+        font-family: $font-sans;
+        color: $black;
+        @include _flexbox();
+        @include _align-items(center);
+
+        &::after{
+          content: '';
+          width: 20px;
+          height: 16px;
+          background: url('../images/ic_arrow_right_red.svg') center center no-repeat;
+          display: inline-block;
+          background-size: contain;
+          margin: 0 0 0 15px;
+        }
+
+      }
+
+    }
+    &-title {
+      font-family: $font-sans;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      color: $black;
+      margin: 0 0 23px 0;
+    }
+
+    &-address,
+    &-date {
+      font-family: $font-sans;
+      font-size: 18px;
+      color: $black;
+      line-height: 26px;
+
+      @include media( md ) {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &-left,
+    &-right {
+      width: 50%;
+
+      @include media( sm ) {
+        width: 100%;
+      }
+    }
+
+    &-left {
+      @include media( sm ) {
+        margin: 0 0 30px 0;
+      }
+    }
+    &-right {
+      padding: 0 0 0 45px;
+
+      @include media( sm ) {
+        padding: 0;
+      }
+    }
+    &-mapa {
+      height: 288px;
+      margin: 0 0 22px 0;
+    }
+
+  }
+
+}

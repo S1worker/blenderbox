@@ -1,0 +1,163 @@
+.newssingle{
+
+  .wp {
+
+    &-swiper {
+      $nav-width: 24px;
+      position: relative;
+      margin: 0 0 60px 0;
+      @include media( md ) {
+        margin: 0 0 35px 0;
+      }
+
+      &__wrapper{
+
+      }
+
+      .swiper{
+
+        &-pagination{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          @include media( md ) {
+            position: static;
+            text-align: left;
+          }
+
+          &-bullet{
+            width: 40px;
+            height: 4px;
+            border-radius: 0;
+            background-color: #000;
+            opacity: .4;
+
+            &:not(:first-child) {
+              margin: 0 0 0 5px;
+            }
+
+            &-active{
+              opacity: 1;
+              background-color: $red;
+            }
+
+          }
+
+        }
+
+        &-button{
+
+          &-prev, &-next{
+            top: 0;
+            bottom: 30px;
+            width: $nav-width;
+            background-color: #F4F4F4;
+            height: auto;
+            margin: 0;
+            z-index: 99;
+            @include media( md ) {
+              bottom: 54px;
+            }
+            @include media( xs ) {
+              width: 44px;
+            }
+
+            &::after {
+              display: none;
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              background-color: $red;
+              height: 148px;
+              top:50%;
+              transform: translateY(-50%);
+              left: 0;
+              right: 0;
+              z-index: 1;
+              width: 24px;
+
+              @include media( sm ) {
+                content: '';
+                position: absolute;
+                background-color: $red;
+                height: 148px;
+                top:50%;
+                transform: translateY(-50%);
+                left: 0;
+                right: 0;
+                z-index: 1;
+              }
+
+            }
+
+            svg{
+              position: relative;
+              z-index: 2;
+              width: 10px;
+
+              path{
+                fill: #fff;
+              }
+            }
+
+          }
+          &-next{
+            right: -#{$nav-width};
+            @include _justify-content(flex-start);
+            svg {
+              margin-left: 7px;
+            }
+            @include media( xs ) {
+              right: -44px;
+            }
+          }
+          &-prev{
+            left: -#{$nav-width};
+            @include _justify-content(flex-end);
+            &::before{
+              right: 0;
+              left: auto;
+            }
+            svg {
+              margin-right: 7px;
+            }
+
+            @include media( xs ) {
+              left: -44px;
+            }
+          }
+
+        }
+
+      }
+
+      .wp-block-image{
+        margin-bottom: 0;
+        padding: 0 0 30px 0;
+        //height: 600px;
+
+        img {
+          display: block;
+          max-width: 100%;
+          height: auto;
+          max-height: 600px;
+          max-width: none;
+          width: 100%;
+        }
+
+        figcaption {
+          position: absolute;
+          left: 0;
+          bottom: -10px;
+          font-size: 12px;
+          line-height: 16px;
+        }
+
+      }
+
+    }
+
+  }
+
+}

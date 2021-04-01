@@ -1,0 +1,181 @@
+.cards {
+  margin: 0px 0 80px 0;
+
+  @include media(md) {
+    margin-bottom: calc(40px - 24px);
+  }
+
+  &__title {
+    padding-top: 80px;
+    border-top: 2px solid $dark;
+
+    @include media(lg)
+    {
+      padding-top: 40px;
+    }
+  }
+
+  &__list {
+    margin-top: 20px;
+    @include _flexbox;
+    @include _justify-content(space-between);
+    @include _align-items(stretch);
+    @include _flex-wrap(wrap);
+  }
+
+  &__item {
+    margin-top: 20px;
+    @include _flexbox;
+    @include _flex-direction(column);
+    background: #F4F4F4;
+    width: 100%;
+    transition: 0.3s all ease-in;
+
+    &:hover{
+      text-decoration: none;
+    }
+
+    &__text {
+      color: $black;
+      margin: 0 0 24px 0;
+    }
+
+    picture
+    {
+      width: 100%;
+    }
+
+    &__image
+    {
+      width: 100%;
+      border-bottom: 4px solid $red;
+      transition: 0.3s all ease-in;
+    }
+
+    &:not(.style-2) {
+      &:hover {
+        background-color: $red;
+
+        .cards__item__link {
+          color: $white;
+
+          &:after {
+            background-image: url("../images/ic_arrow_right.svg");
+          }
+        }
+
+        .cards__item__image
+        {
+          border-bottom: 4px solid #6B1B1F;
+        }
+
+        .cards__item__title
+        {
+          color: $white;
+        }
+      }
+    }
+
+
+    @include media_min(sm)
+    {
+      width: calc(50% - 24px);
+
+      &:nth-child(2n)
+      {
+        margin-right: 0;
+      }
+    }
+
+    @include media_min(lg)
+    {
+      width: calc(33.3333% - 24px);
+
+      &:nth-child(3n)
+      {
+        margin-right: 0;
+      }
+    }
+
+    &__info
+    {
+      padding: 24px 16px;
+    }
+
+    &__title
+    {
+      transition: 0.3s all ease-in;
+    }
+
+    &__link
+    {
+      margin-top: 8px;
+      color: $black;
+      font-family: $font-sans;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0;
+      line-height: 1;
+      transition: 0.3s all ease-in;
+      vertical-align: middle;
+      position: relative;
+      display: inline-block;
+      padding: 0 35px 0 0;
+
+      &:hover
+      {
+        color: $red;
+      }
+
+      &:after
+      {
+        content: '';
+        background-image: url("../images/ic_arrow_right_red.svg");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 16px;
+        width: 20px;
+        vertical-align: middle;
+        transition: 0.3s all ease-in;
+        position: absolute;
+        right: 0;
+        top: calc(50% - 8px);
+      }
+    }
+  }
+
+
+
+  &.style {
+
+    &-2 {
+      .cards__item__info {
+        padding: 36px 0 0 0;
+      }
+      .cards__item {
+        background-color: #fff;
+        @include media(md) {
+          margin-bottom: 24px;
+        }
+
+        &:hover {
+          .cards__item__title {
+            color: $red;
+          }
+        }
+
+      }
+      .cards__item__title {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0 0 25px 0;
+      }
+
+    }
+
+  }
+
+
+}

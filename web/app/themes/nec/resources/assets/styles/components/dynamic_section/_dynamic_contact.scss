@@ -1,0 +1,127 @@
+.dynamic__contact {
+  margin: 0 0 80px 0;
+  @include media( md ) {
+    margin: 0 0 40px 0;
+  }
+
+  &.border{
+    &-top{
+      border-top: 2px solid #000;
+      padding-top: 90px;
+      @include media( md ) {
+        padding-top: 40px;
+      }
+    }
+    &-bottom{
+      border-bottom: 2px solid #000;
+      padding-bottom: 90px;
+      @include media( md ) {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &-container {
+    $size-photo: 120px;
+    background-color: $grey;
+    @include _flexbox();
+    @include _align-items(center);
+    padding: 40px;
+    @include media(sm) {
+      @include _flex-flow(column nowrap);
+      @include _justify-content(flex-start);
+      @include _align-items(flex-start);
+    }
+
+    &--photo {
+      width: $size-photo;
+      height: $size-photo;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: $grey;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @include media(sm) {
+        margin: 0 0 40px 0;
+      }
+
+      &.none {
+        background-image: url('../images/contacts-userpic-none.jpg');
+      }
+
+      img {
+
+      }
+
+    }
+
+    &--inner {
+      width: calc(100% - #{$size-photo});
+      padding: 0 0 0 40px;
+      @include media(sm) {
+        padding: 0;
+        width: 100%;
+      }
+
+      &---name {
+        margin: 0 0 5px 0;
+      }
+
+      &---text {
+        margin: 0 0 2px 0;
+        i {
+          font-style: italic;
+        }
+      }
+
+      &---place {
+        margin: 0 0 2px 0;
+      }
+
+      &---footer {
+        padding: 12px 0 0 0;
+
+        a {
+          @include _flexinline();
+          @include _align-items(center);
+          font-size: 16px;
+          line-height: 16px;
+
+          &:not(:last-child) {
+            margin: 0 10px 0 0;
+          }
+
+          &::before {
+            $size: 19px;
+            content: '';
+            width: $size;
+            height: $size;
+            margin: 0 8px 0 0;
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: contain;
+          }
+
+        }
+
+        .email {
+          &::before {
+            background-image: url('../images/ic_envelope.svg');
+          }
+        }
+
+        .phone {
+          &::before {
+            background-image: url('../images/ic_telephone.svg');
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+
+
+}

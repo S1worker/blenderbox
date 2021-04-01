@@ -1,0 +1,318 @@
+/**
+ * Classes Buttons
+ *
+ * btn
+ * btn-red
+ * btn-white
+ * btn-black
+ * btn-opacity
+ * btn-red-opacity
+ * btn-white-opacity
+ * btn-black-opacity
+ * btn-download
+ *
+ */
+
+.btn {
+  display: inline-block;
+  font-family: $font-sans;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background: none;
+  border: 1px solid $black;
+  color: $black;
+  white-space: nowrap;
+  padding: 13px 16px;
+  height: 48px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 24px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  width: max-content;
+  transition: all 0.15s linear;
+
+  &:hover {
+    text-decoration: none;
+    background-color: $black;
+    border-color: $black;
+    color: #fff;
+  }
+
+  &-arrow{
+
+    &-right{
+      padding-right: 50px;
+
+      &::after{
+        content: '';
+        display: block;
+        width: 20px;
+        height: 16px;
+        background: url('../images/ic_arrow_right_black.svg') center center no-repeat;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: right 0.15s linear;
+        will-change: transform;
+
+        :hover > & {
+
+        }
+
+      }
+
+      &:hover {
+        &::after{
+          right: 17px;
+          background-image: url('../images/ic_arrow_right.svg');
+        }
+      }
+
+    }
+
+  }
+
+  &-outline{
+    &-white{
+      &::after{
+        background-image: url('../images/ic_arrow_right.svg');
+      }
+    }
+  }
+
+  &-video{
+    &-play{
+      $width: 70px;
+      $width-xs: 35px;
+      position: absolute;
+      width: $width;
+      height: $width;
+      left: 50%;
+      top: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 3;
+      @include media( xs ) {
+        width: $width-xs;
+        height: $width-xs;
+      }
+
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        display: block;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+      &::after {
+        z-index: 2;
+        width: $width;
+        height: $width;
+        background: transparent url('../images/ic_play_button.svg') center center no-repeat;
+        @include media( xs ) {
+          width: $width-xs;
+          height: $width-xs;
+        }
+      }
+      &::before {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        z-index: -1;
+        @include media( xs ) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+
+    }
+  }
+
+  &.arrow {
+    @include _flexbox();
+    @include _align-items(center);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 16px;
+      background: url('../images/ic_arrow_right_black.svg') center center no-repeat;
+      background-size: contain;
+      transition: right 0.15s linear;
+      will-change: transform;
+      margin: 0 0 0 20px;
+    }
+
+  }
+
+  &-red {
+    background-color: $red;
+    border-color: $red;
+    color: #fff;
+
+    &:hover {
+      background-color: #000;
+      border-color: #000;
+      opacity: 1;
+      color: #fff;
+
+    }
+
+    &.arrow {
+      &::after{
+        background-image: url('../images/ic_arrow_right.svg');
+      }
+      &:hover {
+        background-color: #6B1B1F;
+        border-color: #6B1B1F;
+      }
+    }
+
+    &-opacity{
+      background-color: transparent;
+      border-color: $red;
+      color: $black;
+
+      &:hover{
+        background-color: $red;
+        border-color: $red;
+        color: #fff;
+      }
+
+      &.arrow{
+        &:hover{
+          &::after{
+            background-image: url('../images/ic_arrow_right.svg');
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &-white {
+    background-color: #fff;
+    border-color: #fff;
+    color: $black;
+
+    &:hover {
+      background-color: #000;
+      border-color: #000;
+      color: #fff;
+    }
+
+    &.arrow{
+      &:hover{
+        &:after{
+          background-image: url('../images/ic_arrow_right.svg');
+        }
+      }
+    }
+
+    &-opacity {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff;
+
+      &:hover {
+        background-color: #fff;
+        border-color: #fff;
+        color: $black;
+      }
+
+      &.arrow {
+        &:hover {
+          &::after{
+            background-image: url('../images/ic_arrow_right_black.svg');
+          }
+        }
+        &::after{
+          background-image: url('../images/ic_arrow_right.svg');
+        }
+      }
+
+    }
+
+  }
+
+  &-black{
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+
+    &:hover{
+      background-color: #fff;
+      border-color: #000;
+      color: $black;
+      &.arrow {
+        &::after {
+          background-image: url('../images/ic_arrow_right_black.svg');
+        }
+      }
+    }
+
+    &.arrow {
+      &::after{
+        background-image: url('../images/ic_arrow_right.svg');
+      }
+    }
+
+    &-opacity{
+      background-color: transparent;
+      border-color: #000;
+      color: $black;
+      &:hover{
+        background-color: #000;
+        border-color: #000;
+        color: #fff;
+      }
+      &.arrow{
+        &:hover{
+          &::after{
+            background-image: url('../images/ic_arrow_right.svg');
+          }
+        }
+      }
+    }
+  }
+
+  &-download {
+    @include _flexbox();
+    @include _align-items(center);
+
+    &::after {
+      $size: 21px;
+      content: '';
+      display: block;
+      width: $size;
+      height: $size;
+      background: url('../images/ic_download_black.svg') center center no-repeat;
+      background-size: contain;
+      transition: right 0.15s linear;
+      will-change: transform;
+      margin: 0 0 0 20px;
+    }
+
+    &:hover {
+      &::after {
+        background-image: url('../images/ic_download_white.svg');
+      }
+    }
+
+  }
+
+}

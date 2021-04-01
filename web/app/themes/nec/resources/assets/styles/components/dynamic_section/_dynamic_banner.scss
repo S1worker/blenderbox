@@ -1,0 +1,33 @@
+.dynamic__banner {
+  background-color: $black;
+  padding: 32px 24px;
+  max-width: 280px;
+  margin: 0 0 40px 0;
+  @include media( md ) {
+    max-width: none;
+    display: none;
+  }
+
+  &.red {
+    background-color: $red;
+  }
+  &.blue {
+    background-color: $blue;
+  }
+
+  &-title{
+    color: #B0E8FE;
+    margin-bottom: 27px;
+
+  }
+
+  &-text,
+  &-text p {
+    color: #fff;
+  }
+
+  &-footer {
+    padding: 24px 0 0 0;
+  }
+
+}

@@ -1,0 +1,136 @@
+.dynamic__slider {
+  $nav-width: 24px;
+  margin: 0 0 80px 0;
+  position: relative;
+  @include media( md ) {
+    margin: 0 0 0px 0;
+  }
+  @include media( xs ) {
+    margin: 0 0 0px 0;
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 30px;
+  }
+
+  &-swiper{
+
+    &--image{
+      position: relative;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        //max-height: 700px;
+      }
+
+      figcaption {
+        position: absolute;
+        left: 0;
+        bottom: -29px;
+        font-family: $font-sans;
+        color: $black;
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next{
+    top: 0;
+    bottom: 30px;
+    width: $nav-width;
+    background-color: #f4f4f4;
+    height: auto;
+    margin: 0;
+    z-index: 99;
+
+    @include media( xs ) {
+      width: 44px;
+    }
+
+    &:hover {
+
+      &::after {
+        background-color: #6B1B1F;
+      }
+
+    }
+
+    &::after {
+      height: 150px;
+      left: 0;
+      right: 0;
+      background-color: $red;
+      color: #fff;
+      font-size: 14px;
+      width: 100%;
+      @include _flexbox();
+      @include _align-items(center);
+      @include _justify-content(center);
+      max-width: $nav-width;
+
+    }
+
+  }
+
+  .swiper-button-next {
+    right: -#{$nav-width};
+    @include _justify-content(flex-start);
+
+    @include media( xs ) {
+      right: -44px;
+      bottom: 54px;
+    }
+  }
+
+  .swiper-button-prev {
+    left: -#{$nav-width};
+    @include _justify-content(flex-end);
+
+    @include media( xs ) {
+      left: -44px;
+      bottom: 54px;
+    }
+  }
+
+  .swiper-pagination{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include media( xs ) {
+      position: static;
+      text-align: left;
+      padding: 0px 0 0 0;
+    }
+
+    &-bullet{
+      width: 40px;
+      height: 4px;
+      border-radius: 0;
+      background-color: #000;
+      opacity: .4;
+
+      &:not(:first-child){
+        margin: 0 0 0 5px;
+      }
+
+      &-active{
+        opacity: 1;
+        background-color: #cb333b;
+      }
+
+    }
+
+  }
+
+  .swiper-slide {
+    &:not(.swiper-slide-active) {
+      opacity: 0 !important;
+    }
+  }
+
+}

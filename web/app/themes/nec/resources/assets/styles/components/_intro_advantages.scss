@@ -1,0 +1,95 @@
+.intro_advantages {
+  position: relative;
+  z-index: 5;
+
+  &__list {
+    @include _flexbox();
+    border-top: 8px solid $blue;
+    padding: 40px 0 80px 0;
+    border-bottom: 2px solid #000;
+    width: 100%;
+    position: relative;
+    margin-top: -230px;
+    background-color: #fff;
+    @include media(md) {
+      @include _flex-flow(column nowrap);
+      margin-top: -190px;
+    }
+    @include media(xs) {
+      margin-top: -100px;
+    }
+
+    > li {
+      width: 33.3%;
+      text-align: center;
+      padding: 0 12px;
+
+      @include media(md) {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin: 0 0 48px 0;
+        }
+
+      }
+
+    }
+
+    &-icon{
+      $size: 40px;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      background-color: $blue;
+      @include _flexbox();
+      @include _align-items(center);
+      @include _justify-content(center);
+      margin: 0 auto 25px auto;
+      @include media(md) {
+        $size: 64px;
+        width: $size;
+        height: $size;
+      }
+
+      img, .svg {
+        max-height: 22px;
+        @include media(md) {
+          max-height: 28px;
+        }
+      }
+
+      .svg {
+        path{
+          fill: #B0E8FE;
+        }
+      }
+
+
+
+    }
+
+    &-title,
+    &-text {
+      max-width: 330px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &-text {
+      @include media(md) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+
+    &-title {
+      @include media(md) {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 0 auto 20px auto;
+      }
+    }
+
+  }
+
+}

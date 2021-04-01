@@ -1,0 +1,109 @@
+.dynamic__links {
+  margin: 0 0 80px 0;
+  @include media( md ) {
+    margin: 0 0 40px 0;
+  }
+
+  &-title {
+    font-family: $font-sans;
+    color: $blue;
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -0.6px;
+    line-height: 38px;
+    margin: 0 0 30px 0;
+  }
+
+  &-list {
+    @include _flexbox();
+    @include _flex-wrap(wrap);
+    position: relative;
+    margin: 0 -12px;
+
+    > li {
+      @include _flexbox();
+      float: left;
+      padding: 0 12px;
+    }
+
+    &.column-1 {
+      > li {
+        width: 100%;
+        &:not(:last-child) {
+          margin-bottom: 24px;
+        }
+      }
+    }
+    &.column-2 {
+      > li {
+        width: 49.8889%;
+        @include media( xs ) {
+          width: 100%;
+
+          &:not(:last-child){
+            margin-bottom: 24px;
+          }
+        }
+      }
+    }
+
+    &--card {
+      background-color: #F4F4F4;
+      padding: 30px 24px;
+      width: 100%;
+
+      &---title {
+        font-family: $font-sans;
+        color: $black;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        margin: 0 0 25px 0;
+      }
+
+      ul {
+        $border-color: #E0E0E0;
+        border-top: 1px solid $border-color;
+
+        > li {
+          font-size: 18px;
+          line-height: 26px;
+          font-family: $font-sans;
+          border-bottom: 1px solid $border-color;
+
+          a {
+            color: $black;
+            display: block;
+            padding: 15px 40px 15px 0;
+            text-decoration: none;
+            position: relative;
+
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 20px;
+              height: 16px;
+              right: 0;
+              background: url('../images/ic_arrow_right_red.svg') center center no-repeat;
+              background-size: contain;
+              top: 18px;
+              transition: all .15s ease-in;
+            }
+            &:hover {
+              color: $red;
+
+              &::after {
+                transform: translateX(3px);
+              }
+            }
+
+
+          }
+        }
+      }
+    }
+
+  }
+
+}

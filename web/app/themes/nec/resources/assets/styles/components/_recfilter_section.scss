@@ -1,0 +1,328 @@
+.recfilter_section {
+
+  &__month{
+    border: 1px solid #E0E0E0;
+    border-left: none;
+    border-right: none;
+    padding: 20px 0;
+    margin: 0 0 40px 0;
+
+    ul {
+      font-size: 14px;
+      line-height: 20px;
+      font-family: $font-sans;
+      color: #161616;
+      @include _flexbox();
+      @include _justify-content(space-between);
+
+      > li {
+        @include _flexbox();
+        @include _align-items(center);
+
+        a {
+          color: #161616;
+          @include _flexbox();
+          @include _align-items(center);
+        }
+
+      }
+
+    }
+
+    &-center {
+      span {
+        @include _flexbox();
+        @include _align-items(center);
+
+        &::before {
+          content: '';
+          width: 12px;
+          height: 13px;
+          background: url('../images/montch-filter-calendar.svg') center center no-repeat;
+          background-size: contain;
+          margin: 0 10px 0 0;
+
+        }
+      }
+    }
+    &-left,
+    &-right {
+      position: relative;
+
+      &::after,
+      &::before {
+        content: '';
+        width: 10px;
+        height: 16px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+      }
+
+      @include media( xs ) {
+        text-indent: -99999px;
+      }
+
+    }
+    &-right{
+
+      &::before{
+        display: none;
+      }
+      &::after {
+        background-image: url('../images/montch-filter-right-arrow.svg');
+        margin: 0 0 0 15px;
+      }
+
+    }
+    &-left{
+
+      &::after {
+        display: none;
+      }
+
+      &::before {
+        background-image: url('../images/montch-filter-left-arrow.svg');
+        margin: 0 15px 0 0;
+      }
+
+    }
+
+  }
+
+  &__filter{
+    margin: 0 0 30px 0;
+
+    &-list {
+      @include _flexbox();
+      @include _justify-content(space-between);
+      margin: 0 -12px;
+      position: relative;
+
+      @include media( xs ) {
+        @include _flex-flow(column nowrap);
+      }
+
+      > li {
+        padding: 0 12px;
+        @include media( xs ) {
+          &:not(:last-child){
+            margin: 0 0 24px 0;
+          }
+        }
+      }
+
+      &.column-1 {
+        > li {
+          width: 100%;
+        }
+      }
+
+      &.column-2 {
+        > li {
+          width: 50%;
+          @include media( xs ) {
+            width: 100%;
+          }
+        }
+      }
+
+      &.column-3 {
+        > li {
+          width: 33.260%;
+          @include media( xs ) {
+            width: 100%;
+          }
+        }
+      }
+
+      &.column-4 {
+        > li {
+          width: 25%;
+          @include media( xs ) {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+
+  &__list {
+    position: relative;
+    //margin: 0 -12px;
+    display: block;
+    height: 100%;
+    @include media( xs ) {
+      height: auto !important;
+    }
+
+    &-empty{
+      height: auto !important;
+    }
+
+    &::after {
+      /*content: '';
+      display: block;
+      clear: both;*/
+    }
+
+    .gutter-sizer {
+
+    }
+    &-item, .grid-sizer{
+      width: 33.322%;
+      @include media( md ) {
+        width: 50%;
+      }
+      @include media( xs ) {
+        width: 100%;
+      }
+    }
+    &-item {
+      padding: 0 12px;
+      //padding: 0 12px;
+      //margin-bottom: 24px;
+      margin: 0 auto 24px auto;
+
+      @include media( xs ) {
+        position: static !important;
+        display: block;
+        height: auto;
+        width: 100%;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+
+      &--banner {
+        background-color: #fff;
+        color: #000;
+        font-family: $font-sans;
+
+        &.blue{
+
+          > div{
+            background-color: $blue;
+            color: #fff;
+          }
+
+        }
+        &.red{
+
+          > div{
+            background-color: $red;
+            color: #fff;
+          }
+
+        }
+
+        &---container {
+          padding: 30px 24px;
+        }
+
+        &---title {
+          color: #B0E8FE;
+          font-size: 24px;
+          font-weight: 500;
+          line-height: 32px;
+          margin: 0;
+
+          @include media( lg ) {
+            font-size: 20px;
+            line-height: 28px;
+          }
+
+        }
+
+        &---text {
+          color: #fff;
+          font-size: 16px;
+          line-height: 24px;
+          padding: 28px 0 0 0;
+
+          @include media( lg ) {
+            font-size:14px;
+            line-height: 20px;
+          }
+
+        }
+
+        &---link {
+          padding: 24px 0 0 0;
+
+          a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            position: relative;
+            padding: 0 50px 0 0;
+            white-space: normal;
+            display: inline-block;
+
+            &::after {
+              content: '';
+              display: inline-block;
+              width: 20px;
+              height: 16px;
+              margin: 0 0 0 15px;
+              background: url('../images/ic_arrow_right.svg') center center no-repeat;
+              background-size: contain;
+              position: absolute;
+              bottom: 0;
+              left: auto;
+              transform: translateY(-1px);
+              transition:all .15s linear;
+            }
+
+            &:hover {
+              text-decoration: underline;
+
+              &::after {
+                transform: translateY(-1px) translateX(5px);
+              }
+
+            }
+
+
+          }
+
+        }
+
+
+      }
+
+
+    }
+
+    .news_events__item {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      display: block;
+      height: 100%;
+      transition: none;
+    }
+
+  }
+
+  &__records {
+    position: relative;
+    margin-right: -12px;
+    margin-left: -12px;
+
+    &-empty{
+      font-family: $font-sans;
+      font-size: 18px;
+      line-height: 24px;
+      color: $black;
+      padding: 40px 12px 0 12px;
+      position: static !important;
+    }
+  }
+
+}

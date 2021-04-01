@@ -1,0 +1,86 @@
+.dynamic__task {
+  margin: 0 0 56px 0;
+  @include media( md ) {
+    margin: 0 0 16px 0;
+  }
+
+  &.border{
+    &-top{
+      border-top: 2px solid #000;
+      padding-top: calc(80px - 24px);
+      @include media( md ) {
+        padding-top: calc(40px - 24px);
+      }
+    }
+    &-bottom{
+      border-bottom: 2px solid #000;
+      padding-bottom: calc(80px - 24px);
+      @include media( md ) {
+        padding-bottom: calc(40px - 24px);
+      }
+    }
+  }
+
+  &-text {
+    margin: 0 0 40px 0;
+    @include media(xs){
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &-list {
+    @include _flexbox();
+    @include _flex-flow(wrap);
+    position: relative;
+    margin-left: -12px;
+    margin-right: -12px;
+
+    > li {
+      @include _flexbox();
+      width: 50%;
+      padding: 0 12px;
+      margin: 0 0 24px 0;
+      @include media(xs){
+        width: 100%;
+        &:last-child{
+          margin: 0 0 12px 0;
+        }
+      }
+    }
+
+    &--item {
+      @include _flexbox();
+      @include _flex-flow(column nowrap);
+      @include _justify-content(space-between);
+      width: 100%;
+      background-color: #F4F4F4;
+      border-top: 4px solid $blue;
+      padding: 20px 16px;
+
+      &---header {
+
+      }
+
+      &---footer {
+        margin: 20px 0 0 0;
+      }
+
+      span {
+        display: block;
+        color: $blue;
+        margin: 0 0 20px 0;
+        font-weight: 600;
+      }
+
+      p {
+        margin: 0;
+        padding: 0;
+        display: block;
+      }
+
+    }
+
+  }
+
+
+}

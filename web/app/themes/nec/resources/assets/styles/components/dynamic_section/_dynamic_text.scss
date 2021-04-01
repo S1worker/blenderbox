@@ -1,0 +1,104 @@
+.dynamic__text {
+  margin: 0 0 80px 0;
+  @include media( md ) {
+    margin: 0 0 40px 0;
+  }
+
+  &.nomargin-bottom {
+    margin-bottom: 0;
+  }
+
+  &.border{
+    &-top{
+      border-top: 2px solid #000;
+      padding-top: 90px;
+      @include media( md ) {
+        padding-top: 40px;
+      }
+    }
+    &-bottom{
+      border-bottom: 2px solid #000;
+      padding-bottom: 90px;
+      @include media( md ) {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  &-content {
+    strong {
+      color: $blue;
+      display: inline-block;
+      margin: 0 0 8px 0;
+    }
+    ul {
+      > li {
+        position: relative;
+        padding: 0 0 0 40px;
+        &:not(:last-child) {
+          margin: 0 0 10px 0;
+        }
+
+        &::before{
+          $size: 5px;
+          content: '';
+          display: block;
+          width: $size;
+          height: $size;
+          position: absolute;
+          left: 12px;
+          background-color: $black;
+          border-radius: 50%;
+          top: 11px;
+        }
+
+      }
+    }
+  }
+
+  &-footer {
+    padding: 18px 0 0 0;
+
+    a {
+      font-weight: 600;
+
+      &.btn {
+        @include media(sm) {
+          white-space: normal;
+          height: auto;
+          width: auto;
+          display: inline-flex;
+          text-align: left;
+          max-width: none;
+          border-radius: 99px;
+
+          &.arrow {
+            padding-right: 50px;
+          }
+        }
+
+        &::after {
+          @include media(sm) {
+            position: absolute;
+            right: 16px;
+          }
+        }
+
+      }
+    }
+
+    .btn {
+      margin-top: 22px;
+    }
+
+  }
+
+  p {
+
+    &:last-child{
+      padding: 0;
+    }
+
+  }
+
+}

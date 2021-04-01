@@ -1,0 +1,65 @@
+.dynamic__menu {
+  max-width: 280px;
+  margin: 0 0 40px 0;
+
+  @include media( md ) {
+    max-width: none;
+  }
+
+  &-title{
+    font-family: $font-sans;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0 0 30px 0;
+    color: $black;
+  }
+
+  &-list {
+    $border-color: #E0E0E0;
+    border-top: 1px solid $border-color;
+
+    > li {
+      border-bottom: 1px solid $border-color;
+
+      a {
+        color: $black;
+        display: block;
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        font-family: $font-sans;
+        padding: 15px 30px 15px 8px;
+        position: relative;
+
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 16px;
+          background: url('../images/ic_arrow_right_red.svg') center center no-repeat;
+          background-size: contain;
+          right: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          transition:all .15s linear;
+          opacity: 0;
+        }
+
+
+        &:hover {
+          background-color: #F4F4F4;
+
+          &::after {
+            opacity: 1;
+          }
+        }
+
+      }
+
+    }
+
+  }
+
+}

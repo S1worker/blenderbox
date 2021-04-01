@@ -1,0 +1,120 @@
+.timeline-deadlines
+{
+
+  &__title
+  {
+    padding-top: 80px;
+    border-top: 2px solid $dark;
+
+    @include media(lg)
+    {
+      padding-top: 40px;
+    }
+  }
+
+  &__list
+  {
+    margin-top: 24px;
+    border-top: 1px solid #E0E0E0;
+    @include _flexbox;
+    @include _flex-direction(column);
+
+    @include media(lg)
+    {
+      margin-top: 16px;
+    }
+  }
+
+  &__item
+  {
+    @include _flexbox;
+    @include _justify-content(space-between);
+    @include _align-items(center);
+    @include _flex-wrap(wrap);
+    padding: 24px 0;
+    border-bottom: 1px solid #E0E0E0;
+
+    @include media(lg)
+    {
+      &:last-child
+      {
+        border-bottom: 0;
+      }
+    }
+
+    @include media(sm)
+    {
+      @include _flex-direction(column);
+      @include _justify-content(flex-start);
+      @include _align-items(flex-start);
+    }
+
+    &__title
+    {
+      width: 33.33%;
+      padding-right: 1rem;
+      margin: 0;
+
+      @include media(sm)
+      {
+        width: 100%;
+      }
+    }
+
+    &__date
+    {
+      width: 33.33%;
+      padding: 0;
+
+      @include media(sm)
+      {
+        width: 100%;
+      }
+    }
+
+    &__buttons
+    {
+      width: 33.33%;
+      text-align: right;
+
+      @include media(sm)
+      {
+        margin-top: 18px;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    &__link
+    {
+      color: $black;
+      font-family: $font-sans;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1;
+      transition: 0.3s all ease-in;
+      vertical-align: middle;
+      position: relative;
+
+      &:hover
+      {
+        color: $red;
+      }
+
+      &:after
+      {
+        content: '';
+        background-image: url("../images/ic_arrow_right_red.svg");
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: inline-block;
+        height: 16px;
+        width: 20px;
+        margin-left: 15px;
+        vertical-align: middle;
+      }
+    }
+  }
+}

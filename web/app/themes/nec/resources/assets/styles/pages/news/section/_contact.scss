@@ -1,0 +1,129 @@
+.newssingle{
+
+  &__contact{
+    border-top: 1px solid #E0E0E0;
+    padding: 30px 0 0 0;
+    margin: 20px 0 25px 0;
+    font-family: $font-sans;
+    font-size: 16px;
+
+    &-title {
+      font-family: $font-sans;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 32px;
+      margin: 0 0 30px 0;
+    }
+
+    &-card{
+      $image-width: 120px;
+      background-color: #F4F4F4;
+      padding: 40px;
+      @include _flexbox();
+      @include _align-items(center);
+
+      @include media( xs ) {
+        @include _flex-flow(column nowrap);
+        @include _align-items(flex-start);
+      }
+
+      &--image{
+        width: $image-width;
+        height: $image-width;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 40px 0 0;
+        @include media( xs ) {
+          margin: 0 0 25px 0;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      &--info{
+        width: calc(100% - #{$image-width} - #{40px});
+        @include _flexbox();
+        @include _align-items(center);
+
+        @include media( md ) {
+          @include _flex-flow(column nowrap);
+          @include _align-items(flex-start);
+        }
+        @include media( xs ) {
+          width: 100%;
+        }
+      }
+
+      &--user, &--otcher{
+        width: 50%;
+        @include media( md ) {
+          width: 100%;
+        }
+      }
+      &--user{
+        @include media( md ) {
+          margin: 0 0 10px 0;
+        }
+        @include media( xs ) {
+          margin: 0 0 25px 0;
+        }
+        span{
+          display: block;
+        }
+      }
+
+      &--otcher{
+        span {
+          display: block;
+          position: relative;
+          color: $red;
+          padding: 0 0 0 35px;
+          @include _flexbox();
+          @include _align-items(center);
+
+          &:not(:last-child){
+            margin: 0 0 5px 0;
+          }
+
+          &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 18px;
+            height: 18px;
+            top: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+
+          &.phone {
+            &::before{
+              background-image: url('../images/ic_telephone.svg');
+            }
+          }
+
+          &.email {
+            &::before{
+              background-image: url('../images/ic_envelope.svg');
+            }
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+
+}

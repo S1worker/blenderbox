@@ -1,0 +1,106 @@
+.dynamic__task_list {
+  margin: 0 0 56px 0;
+  @include media( md ) {
+    margin: 0 0 40px 0;
+  }
+
+  &.border{
+    &-top{
+      border-top: 2px solid #000;
+      padding-top: calc(80px - 24px);
+      @include media( md ) {
+        padding-top: calc(40px - 24px);
+      }
+    }
+    &-bottom{
+      border-bottom: 2px solid #000;
+      padding-bottom: calc(80px - 24px);
+      @include media( md ) {
+        padding-bottom: calc(40px - 24px);
+      }
+    }
+  }
+
+  &-title {
+
+  }
+
+  &-list {
+    @include _flexbox();
+    @include _flex-wrap(wrap);
+    position: relative;
+    margin: 0 -12px;
+    @include media(sm) {
+      height: auto !important;
+    }
+
+    > li,
+    .grid-sizer {
+      width: 50%;
+    }
+
+    > li {
+      float: left;
+      padding: 0 12px;
+      margin: 0 0 24px 0;
+      @include media(sm) {
+        float: none;
+        width: 100%;
+        position: static !important;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        &.grid-sizer {
+          display: none;
+        }
+
+
+      }
+    }
+
+
+    &--item {
+      background-color: $grey;
+      border-top: 4px solid $blue;
+      padding: 40px;
+
+      &---title {
+        color: $blue;
+      }
+
+      &---text {
+        margin: 0 0 30px 0;
+      }
+
+      &---subtitle {
+        margin: 0 0 25px 0;
+      }
+
+
+      &---list {
+        $border-color: #A8A8A8;
+        border-top: 1px solid $border-color;
+        margin: 0 0 30px 0;
+        > li {
+          border-bottom: 1px solid $border-color;
+          padding: 8px 0;
+        }
+
+      }
+
+      &---footer {
+
+      }
+
+    }
+
+  }
+
+  &-footer {
+
+  }
+
+
+}

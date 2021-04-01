@@ -1,0 +1,194 @@
+.dynamic__downloads {
+  margin: 0 0 40px 0;
+  @include media( md ) {
+    margin: 0 0 0px 0;
+  }
+
+  &.border{
+
+    &-top {
+      padding-top: 80px;
+      border-top: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+    &-bottom {
+      padding-bottom: 80px;
+      border-bottom: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+  }
+
+  &-title {
+
+  }
+
+  &-list {
+
+    &--title {
+
+    }
+
+    &--description{
+      margin: 0 0 40px 0;
+      p {
+        margin: 0;
+        padding: 0 0 10px 0;
+      }
+      strong{
+        font-weight: 600;
+      }
+    }
+
+    &--header{
+      @include _flexbox();
+      @include _justify-content(space-between);
+      margin: 0 0 45px 0;
+      padding: 5px 0 0 0;
+      @include media(md) {
+        @include _flex-flow(column nowrap);
+      }
+
+      > div {
+        padding: 10px 0 0 0;
+        @include media(md) {
+          padding: 0;
+        }
+      }
+
+      &---title {
+        color: $black;
+        font-family: $font-serif;
+        font-weight: 300;
+        margin: 0 0 5px 0;
+        @include media(md) {
+          margin: 0 0 25px 0;
+        }
+      }
+
+      &---subtitle {
+        margin: 0;
+      }
+
+      p {
+        display: block;
+        padding: 45px 0 0 0;
+        @include media(md) {
+          padding: 19px 0 28px 0;
+        }
+      }
+
+    }
+
+    &--content {
+      @include _flexbox();
+      @include _flex-wrap(wrap);
+      position: relative;
+      margin-right: -12px;
+      margin-left: -12px;
+      @include media(md) {
+        height: auto !important;
+      }
+
+      .col, .grid-sizer {
+        width: 50%;
+        padding: 0 12px;
+        @include media(lg) {
+          width: 100%;
+        }
+      }
+
+      .col {
+
+      }
+
+
+    }
+
+    .row {
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #E0E0E0;
+        margin-bottom: 48px;
+        padding-bottom: 20px;
+        @include media(md) {
+          padding-bottom: 0px;
+          margin-bottom: 30px;
+        }
+      }
+
+      &:last-child{
+        .dynamic__downloads-list--content {
+          border: none;
+          margin-bottom: 0;
+        }
+        @include media(md) {
+          .dynamic__downloads-sublist--list {
+            //margin: 0;
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+  &-sublist {
+    @include media(md) {
+      position: static !important;
+    }
+
+    &--list {
+      margin: 0 0 40px 0;
+
+      &---header {
+        border-bottom: 1px solid #E0E0E0;
+        margin: 0 0 32px 0;
+        @include media(md) {
+          margin: 0 0 26px 0;
+        }
+
+        &----title {
+          margin: 0 0 16px 0;
+        }
+
+      }
+
+      &---text {
+        margin: 0 0 17px 0;
+
+        p {
+          padding: 0;
+          margin: 0;
+        }
+
+      }
+
+      &---list {
+
+      }
+
+    }
+
+    .accordion{
+      &-downloads {
+        &-title {
+
+          * {
+            font-size: 16px;
+            line-height: 20px;
+          }
+
+        }
+      }
+    }
+
+  }
+
+}

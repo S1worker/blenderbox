@@ -1,0 +1,164 @@
+.floating_section {
+  padding: 35px;
+  background-color: $red;
+  max-width: 306px;
+  color: #fff;
+  border-bottom: 8px solid #6B1B1F;
+
+  &.blue{
+    background-color: $blue;
+    border-bottom-color: #001c59;
+  }
+  &.black{
+    background-color: $black;
+    border-bottom-color: $dark;
+  }
+
+  &.absolute,
+  &.fixed {
+    $top: 210px;
+    $right: 24px;
+    position: absolute;
+    z-index: 10;
+
+    &.rightBottom{
+      right: $right;
+      top: auto;
+      left: auto;
+      bottom: $top;
+    }
+    &.rightTop{
+      right: $right;
+      top: $top;
+      left: auto;
+    }
+    &.leftBottom{
+      left: $right;
+      bottom: $top;
+      top: auto;
+    }
+    &.leftTop{
+      left: $right;
+      top: $top;
+    }
+  }
+
+  &.fixed{
+    position: fixed;
+    z-index: 10;
+  }
+
+  &__title{
+    color: #fff;
+    margin: 0 0 25px 0;
+    font-family: $font-serif;
+  }
+
+  &__close{
+    $width-close: 32px;
+    $width-close-mobile: 52px;
+    text-indent: -99999px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $width-close;
+    height: $width-close;
+    background-color: #000;
+    z-index: 11;
+    @include media( md ) {
+      width: $width-close-mobile;
+      height: $width-close-mobile;
+    }
+
+    &::after,
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: #{$width-close / 2};
+      height: 1px;
+      background-color: #fff;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-left: -2px;
+      @include media( md ) {
+        width: #{$width-close-mobile / 2};
+      }
+    }
+    &::after {
+      transform: rotate(45deg) translateX(-50%);
+      top: 50%;
+      margin-top: 6px;
+      @include media( md ) {
+        margin-top: 9px;
+      }
+    }
+    &::before {
+      transform: rotate(-45deg) translateX(-50%);
+      top: 50%;
+      margin-top: -6px;
+      @include media( md ) {
+        margin-top: -9px;
+      }
+    }
+  }
+
+  @include media( lg ) {
+
+    &.absolute,
+    &.fixed {
+      $top: 110px;
+
+      &.rightBottom{
+        bottom: $top;
+      }
+      &.rightTop{
+        top: $top;
+      }
+      &.leftBottom{
+        bottom: $top;
+      }
+      &.leftTop{
+        top: $top;
+      }
+    }
+
+  }
+
+  @include media( md ) {
+    $top: 82px;
+    $padd-left-right: 24px;
+    right: 0;
+    top: $top;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    padding-right: $padd-left-right;
+    padding-left: $padd-left-right;
+
+    &.absolute,
+    &.fixed {
+      top: $top;
+
+      &.rightBottom{
+        right: 0;
+        left: 0;
+      }
+      &.rightTop{
+        right: 0;
+        left: 0;
+        top: $top;
+      }
+      &.leftBottom{
+        left: 0;
+      }
+      &.leftTop{
+        left: 0;
+        top: $top;
+      }
+
+    }
+
+  }
+
+}

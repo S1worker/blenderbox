@@ -1,0 +1,118 @@
+.dynamic__accordion {
+  margin: 0 0 80px 0;
+  @include media(md) {
+    margin: 0 0 40px 0;
+  }
+
+  &.border{
+
+    &-top {
+      padding-top: 80px;
+      border-top: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+    &-bottom {
+      padding-bottom: 80px;
+      border-bottom: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+  }
+
+  &-list {
+    list-style: none;
+
+    > li {
+
+      &:not(:last-child){
+        margin: 0 0 8px 0;
+      }
+
+      &.active{
+        .dynamic__accordion-list--content {
+          display: block;
+        }
+        .dynamic__accordion-list--title {
+          &::after{
+            transform: rotate(135deg) translateY(-50%);
+            border-left: none;
+            width: 20px;
+            margin-top: -7px;
+            right: 25px;
+          }
+          &::before{
+            content: '';
+            display: block;
+            height: 2px;
+            background-color: #000;
+            width: 20px;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: rotate(45deg) translateY(-50%);
+          }
+        }
+      }
+    }
+
+    &--title{
+      display: block;
+      position: relative;
+      padding: 19px 48px 19px 16px;
+      background-color: $grey;
+
+      &:hover{
+        text-decoration: none;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      &::after{
+        $size: 14px;
+        content: '';
+        display: block;
+        position: absolute;
+        width: $size;
+        height: $size;
+        border: 2px solid #000;
+        border-top: none;
+        border-right: none;
+        right: 22px;
+        transform: rotate(-45deg) translateY(-50%);
+        top: 50%;
+        margin-top: -6px;
+      }
+
+    }
+
+    &--content{
+      padding: 45px 40px;
+      display: none;
+      background-color: $grey;
+      position: relative;
+      border-top: 1px solid #A8A8A8;
+
+      hr {
+        display: none;
+      }
+
+      p {
+        &:last-child{
+          padding: 0;
+        }
+      }
+
+    }
+
+  }
+
+
+}

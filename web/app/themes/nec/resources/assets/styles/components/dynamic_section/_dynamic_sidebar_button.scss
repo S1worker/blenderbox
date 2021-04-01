@@ -1,0 +1,9 @@
+.dynamic__sidebar_button {
+  margin: 0 0 40px 0;
+  width: 159px;
+
+  @include media(md) {
+    display: none;
+  }
+
+}

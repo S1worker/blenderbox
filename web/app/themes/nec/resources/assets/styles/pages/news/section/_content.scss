@@ -1,0 +1,225 @@
+.newssingle{
+  border-top: 1px solid #E0E0E0;
+
+  &__content{
+
+    &-container{
+      position: relative;
+    }
+
+    &-border{
+      padding-top: 85px;
+      border-top: 2px solid #000;
+
+      @include media( md ) {
+        padding-top: 100px;
+      }
+
+    }
+
+    &-inner {
+      max-width: 790px;
+      margin: 0 auto;
+      font-family: $font-sans;
+      color: $black;
+      font-size: 18px;
+      line-height: 26px;
+      @include media( md ) {
+        max-width: none;
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      a {
+        color: $red;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.wp-block-button__link{
+          color: $black;
+          background-color: transparent;
+          border-radius: 0;
+          font-size: 14px;
+          font-weight: 600;
+          padding: 0;
+          text-align: left;
+          position: relative;
+          @include _flexbox();
+          @include _align-items(center);
+          margin: 0 0 30px 0;
+
+          &::after{
+            content: '';
+            width: 20px;
+            height: 16px;
+            background: url('../images/ic_arrow_right_red.svg') center center no-repeat;
+            background-size: contain;
+            margin: 0 0 0 15px;
+          }
+
+        }
+
+      }
+
+      h2, h5 {
+        font-family: $font-sans;
+      }
+
+      h2 {
+        color: $blue;
+        font-size: 32px;
+        font-weight: 500;
+        letter-spacing: -0.6px;
+        line-height: 38px;
+        margin: 0 0 50px 0;
+
+        @include media( lg ) {
+          font-size: 28px;
+          line-height: 34px;
+        }
+        @include media( md ) {
+          font-size: 32px;
+          line-height: 38px;
+          margin: 0 0 30px 0;
+        }
+
+      }
+
+      h5{
+        color: $black;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        margin: 0 0 28px 0;
+      }
+
+      p{
+        margin: 0;
+        padding: 0 0 30px 0;
+      }
+
+      //blockquote {
+      //  $padding-top: 45px;
+      //  font-family: $font-serif;
+      //  font-size: 32px;
+      //  font-weight: 300;
+      //  line-height: 44px;
+      //  border-top: 4px solid #F4F4F4;
+      //  padding: $padding-top 0 0 0;
+      //  position: relative;
+      //  margin: 0 0 50px 0;
+      //
+      //  @include media( md ) {
+      //    padding: 40px 0 0 0;
+      //    font-size: 24px;
+      //    line-height: 32px;
+      //    margin: 0 0 65px 0;
+      //  }
+      //
+      //  &::before {
+      //    content: '\201c';
+      //    display: block;
+      //    position: absolute;
+      //    left: -35px;
+      //    top: $padding-top;
+      //    font-family: "Times New Roman";
+      //    color: $blue;
+      //    font-size: 38px;
+      //    font-weight: 700;
+      //    line-height: 48px;
+      //  }
+      //
+      //  cite {
+      //    font-size: 16px;
+      //    line-height: 22px;
+      //    display: block;
+      //
+      //    br {
+      //      display: none;
+      //    }
+      //
+      //    strong {
+      //      font-size: 18px;
+      //      line-height: 24px;
+      //      font-weight: 600;
+      //      display: block;
+      //      margin: 0 0 10px 0;
+      //
+      //    }
+      //  }
+      //
+      //}
+
+      ul{
+        margin: 0 0 50px 0;
+        @include media( md ) {
+          margin: 0 0 40px 0;
+        }
+
+        > li {
+          padding: 0 0 0 25px;
+          position: relative;
+
+          &:not(:last-child) {
+            margin: 0 0 12px 0;
+          }
+
+          &::before {
+            $size: 5px;
+            content: '';
+            position: absolute;
+            display: block;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            background-color: $black;
+            left: 0;
+            top: 10px;
+
+          }
+
+        }
+      }
+
+      .wp-block-video {
+        margin: 0 0 40px 0;
+        position: relative;
+
+        [poster] {
+          width: 100%;
+        }
+      }
+
+      .wp-block-image{
+        margin-bottom: 30px;
+      }
+
+      .wp-block-columns {
+        margin-bottom: 0px;
+      }
+
+      .wp-block-column {
+        @include media( sm ) {
+          &:not(:only-child) {
+            @include _flex-basis(100% !important);
+            width: 100%;
+            margin-right: 0;
+            margin-left: 0;
+          }
+        }
+      }
+
+      .has-small-font-size{
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0;
+      }
+
+    }
+
+  }
+
+}

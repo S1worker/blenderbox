@@ -1,0 +1,65 @@
+/**
+ * Classes Link
+ *
+ * link
+ * link-red
+ * link-white
+ * link-black
+ *
+ */
+
+.link {
+  font-family: $font-sans;
+  font-size: 14px;
+  line-height: 18px;
+  color: $black;
+  font-weight: 500;
+  position: relative;
+
+  &:hover{
+    text-decoration: underline;
+    color: $black;
+  }
+
+  &.arrow {
+    @include _flexinline();
+    @include _align-items(center);
+
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 16px;
+      background: url('../images/ic_arrow_right_black.svg') center center no-repeat;
+      background-size: contain;
+      margin: 0 0 0 17px;
+    }
+
+    &-red {
+      &::after {
+        background-image: url('../images/ic_arrow_right_red.svg');
+      }
+    }
+
+  }
+
+  &-white{
+    color: #fff;
+
+    &.arrow{
+      &::after{
+        background-image: url('../images/ic_arrow_right.svg');
+      }
+    }
+
+    &:hover{
+      color: #fff;
+    }
+
+  }
+
+  &-black{
+
+  }
+
+}

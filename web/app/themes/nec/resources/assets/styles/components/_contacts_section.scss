@@ -1,0 +1,125 @@
+.contacts_section {
+  margin: 0 0 40px 0;
+  @include media(md) {
+    margin: 0 0 40px 0;
+  }
+
+  &__container {
+
+    &-inner{
+
+      &.border{
+        &-top{
+          border-top: 2px solid #000;
+          padding-top: 90px;
+          @include media( md ) {
+            padding-top: 40px;
+          }
+        }
+        &-bottom{
+          border-bottom: 2px solid #000;
+          padding-bottom: 90px;
+          @include media( md ) {
+            padding-bottom: 40px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  &__box {
+    background-color: $grey;
+    padding: 40px;
+  }
+
+  &__columns {
+    @include _flexbox();
+    @include _flex-wrap(wrap);
+    position: relative;
+    margin: 0 -20px;
+
+    > li {
+      width: 33.32%;
+      padding: 0 20px;
+
+      @include media(sm) {
+        width: 100%;
+
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
+
+      }
+
+    }
+
+    &-column {
+
+      &--links {
+
+        > li {
+
+          &:not(:last-child) {
+            margin: 0 0 8px 0;
+          }
+
+          a {
+            font-size: 16px;
+            line-height: 22px;
+            position: relative;
+            padding: 0 0 0 34px;
+
+            &::before {
+              $size:18px;
+              content: '';
+              display: block;
+              position: absolute;
+              left: 0;
+              width: $size;
+              height: $size;
+              background-repeat: no-repeat;
+              background-position: center center;
+              background-size: contain;
+              top: 50%;
+              transform: translateY(-50%);
+
+            }
+
+            &.mailto {
+
+              &::before {
+                background-image: url('../images/ic_envelope.svg');
+              }
+
+            }
+
+            &.tel {
+
+              &::before {
+                background-image: url('../images/ic_telephone.svg');
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+      &--text {
+        p {
+          &:last-child{
+            margin: 0;
+            padding: 0;
+          }
+        }
+      }
+
+    }
+
+  }
+
+}

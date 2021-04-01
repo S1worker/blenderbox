@@ -1,0 +1,72 @@
+@import "config";
+@import "functions";
+@import "mixins";
+@import "mixins-flexbox";
+
+@import "~@fortawesome/fontawesome-free/css/brands.css";
+@import "~@fortawesome/fontawesome-free/css/solid.css";
+@import "~@fortawesome/fontawesome-free/css/regular.css";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+@import "~swiper/swiper-bundle.css";
+@import "~select2/dist/css/select2.css";
+
+@import "main/fonts";
+@import "main/reset";
+@import "main/global";
+@import "modules/btn";
+@import "modules/link";
+@import "modules/blockquote";
+@import "modules/select2";
+@import "modules/text";
+@import "modules/breadcrumbs";
+@import "main/partials/header";
+@import "main/partials/footer";
+
+@import "pages/page";
+
+
+@import "components/cards";
+@import "components/quote_slider";
+@import "components/help_find_programs";
+@import "components/news_events";
+@import "components/home_banner";
+@import "components/intro_banner";
+@import "components/intro_text";
+@import "components/intro_advantages";
+@import "components/column_section";
+@import "components/grid_section";
+@import "components/featured_content";
+@import "components/conversion_section";
+@import "components/timeline-deadlines";
+@import "components/floating_section";
+@import "components/to_top";
+@import "components/recfilter_section";
+@import "components/taxfilter_section";
+@import "components/contacts_section";
+@import "components/quick_links_section";
+
+@import "components/dynamic_section";
+@import "components/dynamic_section/dynamic_text";
+@import "components/dynamic_section/dynamic_award";
+@import "components/dynamic_section/dynamic_links";
+@import "components/dynamic_section/dynamic_video";
+@import "components/dynamic_section/dynamic_slider";
+@import "components/dynamic_section/dynamic_media";
+@import "components/dynamic_section/dynamic_menu";
+@import "components/dynamic_section/dynamic_navsections";
+@import "components/dynamic_section/dynamic_sidebar_contacts";
+@import "components/dynamic_section/dynamic_banner";
+@import "components/dynamic_section/dynamic_accordion";
+@import "components/dynamic_section/dynamic_timeline";
+@import "components/dynamic_section/dynamic_sidebar_badges";
+@import "components/dynamic_section/dynamic_bars";
+@import "components/dynamic_section/dynamic_downloads";
+@import "components/dynamic_section/dynamic_teachers";
+@import "components/dynamic_section/dynamic_task_calendar";
+@import "components/dynamic_section/dynamic_quick_links";
+@import "components/dynamic_section/dynamic_contact";
+@import "components/dynamic_section/dynamic_sidebar_button";
+@import "components/dynamic_section/dynamic_task_list";
+
+@import "pages/news/single";

@@ -1,0 +1,85 @@
+.dynamic__bars {
+  margin: 0 0 15px 0;
+  @include media( md ) {
+
+  }
+
+  &.border{
+
+    &-top {
+      padding-top: 80px;
+      border-top: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+    &-bottom {
+      padding-bottom: 80px;
+      border-bottom: 2px solid #000;
+      @include media(md) {
+        padding-top: 40px;
+      }
+    }
+
+  }
+
+  &-title {
+    margin: 0 0 45px 0;
+  }
+
+  &-list {
+    position: relative;
+    margin-left: -13px;
+    margin-right: -13px;
+    @include _flexbox();
+    @include _flex-wrap(wrap);
+
+    @include media( md ) {
+      @include _flex-flow(column nowrap);
+    }
+
+    > li {
+      padding: 0 13px;
+      width: 50%;
+      @include _flexbox();
+      @include _flex-flow(column nowrap);
+      margin: 0 0 25px 0;
+      @include media( md ) {
+        width: 100%;
+      }
+
+    }
+
+    &--inner {
+
+      &---title {
+        margin: 0 0 3px 0;
+      }
+
+      &---subtitle {
+        margin: 0 0 13px 0;
+      }
+
+      &---bar {
+        position: relative;
+        height: 8px;
+        background-color: #E0E0E0;
+        width: 100%;
+
+        span {
+          position: absolute;
+          z-index: 2;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          background-color: $blue;
+        }
+
+      }
+
+    }
+
+  }
+
+}

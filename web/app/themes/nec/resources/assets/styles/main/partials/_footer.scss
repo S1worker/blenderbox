@@ -1,0 +1,269 @@
+.footer
+{
+  //margin-top: 120px;
+  background-color: $dark;
+  border-top: 8px solid $blue;
+  border-bottom: 8px solid $red;
+  padding: 32px 0;
+
+  &__inner
+  {
+    @include container;
+  }
+
+  &__head
+  {
+    @include _flexbox;
+    @include _align-items(flex-start);
+    @include _justify-content(space-between);
+    @include _flex-wrap(wrap);
+
+    &__logo
+    {
+      @include _flexbox;
+      @include _flex-direction(column);
+      width: 20%;
+
+      @include media(md)
+      {
+        width: 100%;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #393939;
+      }
+
+      &__image
+      {
+        height: 47px;
+        width: 160px;
+      }
+
+      &__text
+      {
+        margin-top: 16px;
+        color: $white;
+        font-family: $font-sans;
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+
+        @include media(lg)
+        {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &__links
+    {
+      @include _flexbox;
+      @include _flex-direction(column);
+
+      @include media(md)
+      {
+        margin-top: 40px;
+      }
+
+      @include media(sm)
+      {
+        width: 50%;
+
+        &:nth-child(3n)
+        {
+          text-align: right;
+        }
+      }
+
+      &__title
+      {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: $white;
+        margin-bottom: 15px;
+      }
+
+      &__item
+      {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: $white;
+        margin-top: 5px;
+        transition: 0.3s ease-in, 0.3s ease-in-out;
+
+        &:hover
+        {
+          color: $light;
+        }
+      }
+    }
+
+    &__social
+    {
+      @include _flexbox;
+      @include _flex-direction(column);
+      padding-right: 70px;
+
+      @include media(md)
+      {
+        margin-top: 40px;
+      }
+
+      @include media(sm)
+      {
+        width: 50%;
+        padding-right: 0;
+        text-align: right;
+      }
+
+      &__title
+      {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: $white;
+        margin-bottom: 15px;
+      }
+
+      &__list
+      {
+        @include _flexbox;
+        @include _align-items(center);
+
+        @include media(md)
+        {
+          @include _justify-content(flex-end);
+        }
+      }
+
+      &__item
+      {
+        margin-top: 5px;
+        height: 12px;
+        width: 12px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        margin-right: 12px;
+
+        &:last-child
+        {
+          margin-right: 0;
+        }
+
+        &--linkedin
+        {
+          background-image: url("../images/social/ic_linkedin.svg");
+        }
+
+        &--facebook
+        {
+          background-image: url("../images/social/ic_facebook.svg");
+        }
+
+        &--instagram
+        {
+          background-image: url("../images/social/ic_insta.svg");
+        }
+
+        &--twitter
+        {
+          background-image: url("../images/social/ic_twitter.svg");
+        }
+      }
+    }
+  }
+
+  &__bottom
+  {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #393939;
+    @include _flexbox;
+    @include _justify-content(space-between);
+    @include _flex-wrap(wrap);
+
+    @include media(sm)
+    {
+      @include _flex-direction(column);
+      @include _justify-content(flex-start);
+    }
+
+    &__links
+    {
+      @include _flexbox;
+      @include _flex-wrap(wrap);
+
+      &__item
+      {
+        font-size: 12px;
+        letter-spacing: 0;
+        line-height: 16px;
+        font-family: 'IBM Plex Sans', sans-serif;
+        color: $white;
+        position: relative;
+        padding-left: 7px;
+        padding-right: 7px;
+        transition: 0.3s ease-in, 0.3s ease-in-out;
+        text-decoration: underline;
+
+        &:first-child
+        {
+          padding-left: 0;
+        }
+
+        &:after
+        {
+          content: '';
+          position: absolute;
+          width: 1px;
+          height: 16px;
+          background-color: $white;
+          right: 0;
+        }
+
+        &:last-child:after
+        {
+          display: none;
+        }
+
+        &:hover
+        {
+          color: $light;
+        }
+      }
+    }
+
+    &__text
+    {
+      color: $white;
+      font-size: 12px;
+      letter-spacing: 0;
+      line-height: 16px;
+      font-family: 'IBM Plex Sans', sans-serif;
+
+      @include media(sm)
+      {
+        margin-top: 16px;
+      }
+
+      a
+      {
+        text-decoration: underline;
+        color: $white;
+        transition: 0.3s ease-in, 0.3s ease-in-out;
+
+        &:hover
+        {
+          color: $light;
+        }
+      }
+    }
+  }
+}

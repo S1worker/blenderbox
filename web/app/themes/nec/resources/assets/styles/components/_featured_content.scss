@@ -1,0 +1,253 @@
+.featured_content
+{
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+
+  &.left
+  {
+    .featured_content__inner
+    {
+      @include _justify-content(flex-end);
+    }
+
+    .featured_content__info
+    {
+      left: 0;
+    }
+  }
+
+  &.right
+  {
+    .featured_content__inner
+    {
+      @include _justify-content(flex-start);
+    }
+
+    .featured_content__info
+    {
+      right: 0;
+    }
+
+    .featured_content__image
+    {
+      transform: translate3d(-10%, 0, 0);
+
+      @include media(lg)
+      {
+        transform: translate3d(0, 0, 0);
+      }
+
+      &.onscreen
+      {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
+        transform: translate3d(0, 0, 0);
+      }
+
+      &:not(.onscreen)
+      {
+        transition-duration: 0s;
+        transition-delay: 0s;
+      }
+    }
+
+    .featured_content__animated-text
+    {
+      &.onscreen
+      {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: initial;
+        transform: translate3d(-60%, 0, 0);
+      }
+
+      &:not(.onscreen)
+      {
+        transition-duration: 0s;
+        transition-delay: 0s;
+      }
+    }
+  }
+
+  &__inner
+  {
+    margin: 0 0 0;
+    @include _flexbox;
+    @include _align-items(center);
+    @include _justify-content(space-between);
+    position: relative;
+
+    @include media(lg)
+    {
+      margin: 0 0 0;
+      @include _flex-wrap(wrap);
+      @include _align-items(flex-start);
+    }
+  }
+
+  &__image
+  {
+    width: 100%;
+    height: 640px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition-delay: 0.3s;
+    transition: 1s $transition;
+    transform: translate3d(10%, 0, 0);
+
+    &.onscreen
+    {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: initial;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &:not(.onscreen)
+    {
+      transition-duration: 0s;
+      transition-delay: 0s;
+    }
+
+    @include media(lg)
+    {
+      height: 500px;
+      transform: translate3d(0, 0, 0);
+    }
+
+    &-wrap
+    {
+      width: 50%;
+      @include _flexbox;
+      @include _align-items(center);
+      @include _justify-content(center);
+
+      @include media(lg)
+      {
+        width: 100%;
+      }
+    }
+  }
+
+  &__info
+  {
+    border-top: 8px solid #E5FAFF;
+    border-bottom: 8px solid #E5FAFF;
+    width: 55%;
+    padding: 80px;
+    background-color: #00226B;
+    position: absolute;
+
+    @include media(xl)
+    {
+      width: 60%;
+      padding: 40px;
+    }
+
+    @include media(lg)
+    {
+      @include _order(2);
+      width: 91%;
+      margin: 0 auto;
+      position: relative;
+      -webkit-transform: translate(0, -25%);
+      transform: translate(0, -25%);
+      padding: 30px 24px;
+    }
+
+    @include media(xs)
+    {
+      margin: 0 auto -20%
+    }
+  }
+
+  &__subtitle
+  {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 20px;
+    color: #B0E8FE;
+
+    @include media(lg)
+    {
+      font-size: 15px;
+    }
+  }
+
+  &__title
+  {
+    margin-top: 24px;
+    color: $white;
+
+    @include media(lg)
+    {
+      margin-top: 10px;
+    }
+  }
+
+  &__text
+  {
+    margin-top: 24px;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 32px;
+    color: $white;
+
+
+    p {
+      padding: 0;
+      color: #fff;
+    }
+
+    @include media(lg)
+    {
+      font-size: 19px;
+      line-height: 28px;
+    }
+  }
+
+  &__animated-text
+  {
+    color: #B0E8FE;
+    font-family: $font-serif;
+    font-size: 120px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 100px;
+    transition-delay: 0.3s;
+    transition: 1s $transition;
+    transform: translate3d(0, 0, 0);
+    position: absolute;
+
+    &.onscreen
+    {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: initial;
+      transform: translate3d(60%, 0, 0);
+    }
+
+    &:not(.onscreen)
+    {
+      transition-duration: 0s;
+      transition-delay: 0s;
+    }
+
+    @include media(lg)
+    {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    margin-top: 30px;
+
+    &__item {
+      transition: 0.3s all ease-in;
+    }
+  }
+}
